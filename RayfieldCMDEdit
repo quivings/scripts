@@ -1674,7 +1674,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 
         function Tab:CreatePlayerMenu(PlayerSettings)
             local PlayerMenu = Elements.Template.PlayerButton:Clone()
-
+			Tab.HorizontalAlignment = Enum.HorizontalAlignment.Left
 			local img, ready = game.Players:GetUserThumbnailAsync(game.Players:FindFirstChild(PlayerSettings.Username).UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
 			PlayerMenu.Title.Text = PlayerSettings.Username
 			PlayerMenu.PFP.Image = img
