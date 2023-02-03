@@ -1674,10 +1674,10 @@ function RayfieldLibrary:CreateWindow(Settings)
 
         function Tab:CreatePlayerMenu(PlayerSettings)
             local PlayerMenu = Elements.Template.PlayerButton:Clone()
-			print(Elements.Parent.Parent)
 			TabPage.UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Left
 			local img, ready = game.Players:GetUserThumbnailAsync(game.Players:FindFirstChild(PlayerSettings.Username).UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
 			PlayerMenu.Title.Text = PlayerSettings.Username
+			PlayerMenu.Name = PlayerSettings.Username
 			PlayerMenu.PFP.Image = img
 			PlayerMenu.Visible = true
 			PlayerMenu.Parent = TabPage
@@ -1765,6 +1765,12 @@ function RayfieldLibrary:CreateWindow(Settings)
 			PlayerMenu.MouseLeave:Connect(function()
 				TweenService:Create(PlayerMenu, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
 			end)
+		end
+		
+		function Tab:DestroyPlayer(name)
+			if TabPage:FindFirstChild(name) then
+				TabPage:FindFirstChild(name):Destroy()
+			end
 		end
 
 		-- Dropdown
