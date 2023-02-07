@@ -1691,7 +1691,13 @@ function RayfieldLibrary:CreateWindow(Settings)
 			TweenService:Create(PlayerMenu, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 0}):Play()
 			TweenService:Create(PlayerMenu.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
 			TweenService:Create(PlayerMenu.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()	
-
+			
+			if PlayerSettings.Banned then
+				PlayerMenu.Ban.Text = "Unban"
+			end
+			if PlayerSettings.Whitelisted then
+				PlayerMenu.Whitelist.Text = "Unwhitelist"
+			end
 			PlayerMenu.Ban.MouseButton1Click:Connect(function()
 				if PlayerMenu.Ban.Text == "Ban" then
 					local Success, Response = pcall(function()
