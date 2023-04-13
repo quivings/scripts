@@ -9,7 +9,6 @@ iRay  | Programming
 ]]
 
 
-
 local Release = "Beta 7R"
 local NotificationDuration = 6.5
 local RayfieldFolder = "Rayfield"
@@ -879,6 +878,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 	Main.BackgroundTransparency = 1
 	LoadingFrame.Title.TextTransparency = 1
 	LoadingFrame.Subtitle.TextTransparency = 1
+	LoadingFrame.Icon.ImageTransparency = 1
 	Main.Shadow.Image.ImageTransparency = 1
 	LoadingFrame.Version.TextTransparency = 1
 	LoadingFrame.Title.Text = Settings.LoadingTitle or "Rayfield Interface Suite"
