@@ -1771,6 +1771,10 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 				Button.Visible = bool
 			end
 
+			function ButtonValue:Destroy()
+				Button:Destroy()
+                        end
+
 			return ButtonValue
 		end
 
