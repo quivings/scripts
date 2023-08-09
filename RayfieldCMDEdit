@@ -1987,6 +1987,10 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 				Paragraph.Content.Text = NewParagraphSettings.Content
 			end
 
+			function ParagraphValue:Destroy()
+				Paragraph:Destroy()
+			end
+
 			return ParagraphValue
 		end
 
