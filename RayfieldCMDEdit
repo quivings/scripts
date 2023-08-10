@@ -1976,7 +1976,10 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 
 			Paragraph.BackgroundColor3 = SelectedTheme.SecondaryElementBackground
 			Paragraph.UIStroke.Color = SelectedTheme.SecondaryElementStroke
-
+			Paragraph.BackgroundTransparency = 0
+			Paragraph.UIStroke.Transparency = 0
+			Paragraph.Title.TextTransparency = 0
+			Paragraph.Content.TextTransparency = 0
 			TweenService:Create(Paragraph, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 0}):Play()
 			TweenService:Create(Paragraph.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
 			TweenService:Create(Paragraph.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()	
