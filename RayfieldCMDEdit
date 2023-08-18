@@ -3121,12 +3121,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 					section = DropdownSettings.SectionParent,
 					element = Dropdown
 				}
-				if DropdownSettings.SectionParent then
-					Dropdown.Parent = DropdownSettings.SectionParent.Holder
-				else
-					Dropdown.Parent = TabPage
-				end
-
+				
 				Dropdown.List.Visible = false
 				Dropdown.BackgroundTransparency = 1
 				Dropdown.UIStroke.Transparency = 1
