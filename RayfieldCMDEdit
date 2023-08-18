@@ -1983,6 +1983,30 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 		end
 
 		-- Input
+
+		function Tab:CreateBigBox(Callback)
+			local Input = Elements.Template.BigInput:Clone()
+			Input.Visible = true
+
+			Tab.Elements[InputSettings.Name] = {
+				type = 'input',
+				section = InputSettings.SectionParent,
+				element = Input
+			}
+
+			Input.Parent = TabPage
+
+			Input.BackgroundTransparency = 1
+			Input.UIStroke.Transparency = 1
+
+			Input.InputFrame.BackgroundColor3 = SelectedTheme.InputBackground
+			Input.InputFrame.UIStroke.Color = SelectedTheme.InputStroke
+
+			Input.InputFrame.InputBox.FocusLost:Connect(function(enter)
+				Callback(enter)
+			end)
+		end
+
 		function Tab:CreateInput(InputSettings)
 			local Input = Elements.Template.Input:Clone()
 			Input.Name = InputSettings.Name
