@@ -3308,7 +3308,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 						end
 
 						local Success, Response = pcall(function()
-							DropdownSettings.Callback(Option)
+							DropdownSettings.Callback(self, Option)
 						end)
 						if not Success then
 							Error('Callback Error')
@@ -3379,7 +3379,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 							DropdownSettings.Items.Selected = {NewOption}
 						end
 						local Success, Response = pcall(function()
-							DropdownSettings.Callback(NewOption)
+							DropdownSettings.Callback(self, NewOption)
 						end)
 						if not Success then
 							TweenService:Create(Dropdown, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(85, 0, 0)}):Play()
