@@ -3099,6 +3099,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 
 			function PlayerValue:CreateDropdown(DropdownSettings)
 				local Dropdown = Elements.Template.PlayerDropdown:Clone()
+				Dropdown.Parent = PlayerMenu
 				local SearchBar = Dropdown.List["-SearchBar"]
 				local Required = 1
 				--local Debounce = false
