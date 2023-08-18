@@ -3237,7 +3237,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 				end
 
 				local function AddOption(Option,Selecteds)
-					local DropdownOption = Elements.Template.Dropdown.List.Template:Clone()
+					local DropdownOption = Elements.Template.PlayerDropdown.List.Template:Clone()
 					DropdownOption:GetPropertyChangedSignal('BackgroundTransparency'):Connect(function()
 						if DropdownOption.BackgroundTransparency == 1 then
 							DropdownOption.Visible = false
