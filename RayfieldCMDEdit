@@ -3506,6 +3506,8 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 			PlayerMenu.MouseLeave:Connect(function()
 				TweenService:Create(PlayerMenu, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
 			end)
+
+			return PlayerValue
 		end
 		
 		function Tab:DestroyPlayer(name)
