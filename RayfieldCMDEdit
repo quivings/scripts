@@ -1988,9 +1988,8 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 			local Input = Elements.Template.BigInput:Clone()
 			Input.Visible = true
 
-			Tab.Elements[InputSettings.Name] = {
+			Tab.Elements["BigInput"] = {
 				type = 'input',
-				section = InputSettings.SectionParent,
 				element = Input
 			}
 
