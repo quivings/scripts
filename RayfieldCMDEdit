@@ -2003,7 +2003,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 			Input.InputFrame.UIStroke.Color = SelectedTheme.InputStroke
 
 			Input.InputFrame.InputBox.FocusLost:Connect(function(enter)
-				Callback(Input.Text)
+				Callback(Input.InputFrame.InputBox.Text)
 			end)
 		end
 
