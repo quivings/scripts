@@ -1987,6 +1987,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 		function Tab:CreateBigBox(Callback)
 			local Input = Elements.Template.BigInput:Clone()
 			Input.Visible = true
+			Input.MultiLine = true
 
 			Tab.Elements["BigInput"] = {
 				type = 'input',
@@ -2002,7 +2003,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 			Input.InputFrame.UIStroke.Color = SelectedTheme.InputStroke
 
 			Input.InputFrame.InputBox.FocusLost:Connect(function(enter)
-				Callback(enter)
+				Callback(Input.Text)
 			end)
 		end
 
