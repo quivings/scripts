@@ -1987,7 +1987,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 		function Tab:CreateBigBox(Callback)
 			local Input = Elements.Template.BigInput:Clone()
 			Input.Visible = true
-			Input.MultiLine = true
+			Input.InputFrame.InputBox.MultiLine = true
 
 			Tab.Elements["BigInput"] = {
 				type = 'input',
