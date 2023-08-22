@@ -2540,6 +2540,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 				CheckingForKey = false
 				if Keybind.KeybindFrame.KeybindBox.Text == nil or "" then
 					Keybind.KeybindFrame.KeybindBox.Text = KeybindSettings.CurrentKeybind
+					
 					SaveConfiguration()
 				end
 			end)
@@ -2560,6 +2561,9 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 						local NewKeyNoEnum = SplitMessage[3]
 						Keybind.KeybindFrame.KeybindBox.Text = tostring(NewKeyNoEnum)
 						KeybindSettings.CurrentKeybind = tostring(NewKeyNoEnum)
+						if KeybindSettings.NewKeyCallback then
+                           				KeybindSettings.NewKeyCallback(tostring(NewKeyNoEnum))
+						end
 						Keybind.KeybindFrame.KeybindBox:ReleaseFocus()
 						SaveConfiguration()
 					end
@@ -2604,7 +2608,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 			Keybind.KeybindFrame.KeybindBox:GetPropertyChangedSignal("Text"):Connect(function()
 				TweenService:Create(Keybind.KeybindFrame, TweenInfo.new(0.55, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {Size = UDim2.new(0, Keybind.KeybindFrame.KeybindBox.TextBounds.X + 24, 0, 30)}):Play()
 			end)
-
+				
 			function KeybindSettings:Set(NewKeybind)
 				Keybind.KeybindFrame.KeybindBox.Text = tostring(NewKeybind)
 				KeybindSettings.CurrentKeybind = tostring(NewKeybind)
