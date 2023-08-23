@@ -14,7 +14,7 @@ Arrays  | Designing + Programming + New Features
 
 local Release = "Release 2A"
 local NotificationDuration = 6.5
-local ArrayFieldFolder = "ArrayField"
+local ArrayFieldFolder = "PI"
 local ConfigurationFolder = ArrayFieldFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 local ArrayFieldQuality = {}
@@ -1395,7 +1395,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 					Passthrough = true
 					if Settings.KeySettings.SaveKey then
 						if writefile then
-							writefile(ArrayFieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension, Settings.KeySettings.Key)
+							writefile(ArrayFieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension, tostring(Settings.KeySettings.Key))
 						end
 						ArrayFieldLibrary:Notify({Title = "Key System", Content = "The key for this script has been saved successfully"})
 					end
