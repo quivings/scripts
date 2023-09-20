@@ -1214,6 +1214,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 	
 	if Settings.KeySystem then
 		if typeof(Settings.KeySettings.Key) == "string" then Settings.KeySettings.Key = {Settings.KeySettings.Key} end
+
 	end
 
 	for _, TabButton in ipairs(TabsList:GetChildren()) do
